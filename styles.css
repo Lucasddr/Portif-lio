@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+a{
+  color: #fff;
+  text-decoration: none;
+}
 body{
+  margin: 0;
+  padding: 0;
   justify-content: center;
   align-items: center;
-  background-color: rgb(54, 0, 59);
 }
 .hero{
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(33, 0, 36);
   display: flex;
   min-height: 100vh;
   align-items: center;
@@ -13,11 +23,47 @@ body{
   color: #fff;
 }
 .introducao{
+  font-size: 20px;
+  font-family: "Exo 2", sans-serif;
   margin: 0;
 }
 .title{
-  margin: 0;
+font-family: "Exo 2", sans-serif;
+font-size: 50px;
+margin: 0;
+  
 }
 .subtitle{
+   font-family: "Oswald", sans-serif;
+   font-size: 60px;
   margin: 0;
+  color: rgb(113, 64, 163)
+}
+.about-me{
+  background-image: url(imagens/fundo\ section2.jpeg);
+  background-position: center;
+  background-size: cover;
+  font-family: "Exo 2", sans-serif;
+  color: #fff;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.container{
+  background-color: transparent;
+  border: 2px solid rgba(152, 151, 151, 0.3);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  max-width: 600px;
+}
+.container p{
+  justify-content: center;
+  text-align: justify;
+}
+img{
+  max-width: 300px;
+  max-height: auto;
+  border-radius: 50%;
+  border: 2px solid #000;
 }
