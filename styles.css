@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html{
+  scroll-behavior: smooth;
+}
 a{
   color: #fff;
   text-decoration: none;
@@ -9,6 +17,18 @@ body{
   padding: 0;
   justify-content: center;
   align-items: center;
+}
+.navbar{
+  font-family: "Exo 2", sans-serif;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+  background-color: rgb(30, 1, 59);
+  padding: 20px 40px;
+  gap: 20px;
+  
 }
 .hero{
   background-size: cover;
@@ -39,10 +59,22 @@ margin: 0;
   margin: 0;
   color: rgb(113, 64, 163)
 }
-.about-me{
-  background-image: url(imagens/fundo\ section2.jpeg);
+.arrow{
+  position: fixed; 
+    bottom: 20px;  
+    left: 50%;     
+    transform: translateX(-50%);
+    font-size: 2rem; 
+    color: #fff;
+    cursor: pointer;
+    z-index: 1000;  
+    animation: bounce 2s infinite;
+}
+.about{
+  background-image: url(imagens/fundo\ section2novo.jpeg);
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: "Exo 2", sans-serif;
   color: #fff;
   display: flex;
@@ -50,20 +82,25 @@ margin: 0;
   align-items: center;
   justify-content: center;
 }
+.about h1{
+  color: rgb(58, 3, 113);
+  font-family: "Oswald", sans-serif;
+}
 .container{
+  padding: 20px;
   background-color: transparent;
   border: 2px solid rgba(152, 151, 151, 0.3);
-  backdrop-filter: blur(20px);
-  border-radius: 15px;
-  max-width: 600px;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  min-width: 1200px;
+  min-height: 500px;
 }
 .container p{
   justify-content: center;
   text-align: justify;
 }
-img{
-  max-width: 300px;
-  max-height: auto;
-  border-radius: 50%;
-  border: 2px solid #000;
+.presentation{
+  max-width: 550px;
+  min-height: 200px;
+  text-align: justify;
 }
