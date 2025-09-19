@@ -28,7 +28,7 @@ body{
   background-color: rgb(30, 1, 59);
   padding: 20px 40px;
   gap: 20px;
-  
+  z-index: 10000;
 }
 .hero{
   background-size: cover;
@@ -109,7 +109,7 @@ margin: 0;
 }
 .presentation{
   margin: 40px;
-  max-width: 50%;
+  max-width: 30%;
   min-height: 200px;
   text-align: justify;
   flex: 2;
@@ -117,22 +117,45 @@ margin: 0;
 .competences{
   justify-content: center;
   margin: 40px;
-  max-width: 50%;
+  max-width: 70%;
   min-height: 200px;
   text-align: center;
   flex: 1;
 }
 .skills{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   min-width: 100%;
   min-height: 100%;
 }
 .skill{
-  justify-content: start;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: justify;
   border: 2px solid rgba(152, 151, 151, 0.3);
   border-radius: 15px;
   background-color: rgba(34, 15, 41, 0.5);
-  margin: 10px;
   padding: 20px;
   min-width: 100%;
   min-height: 25%;
+}
+.skill i{
+  margin-right: 8px;
+  font-size: 20px;
+}
+.skill p{
+  margin-right: 20px;
+}
+.progress-bar{
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  width: 75%;
+  height: 8px;
+  border: 2px solid rgba(152, 151, 151, 0.3);
+  border-radius: 15px;
+  margin: 20px;
 }
