@@ -1,6 +1,56 @@
+const textElement = document.querySelector(".typing-text");
+const texts = ["Full Stack", "Frontend", "Backend"];
+
+let textIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let speed = 200;
+
+function typeEffect() {
+  const currentText = texts[textIndex];
+
+  if (isDeleting) {
+    textElement.textContent = currentText.substring(0, charIndex--);
+  } else {
+    textElement.textContent = currentText.substring(0, charIndex++);
+  }
+
+  if (!isDeleting && charIndex === currentText.length + 1) {
+    isDeleting = true;
+    speed = 100;
+    setTimeout(typeEffect, 1000);
+    return;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    textIndex = (textIndex + 1) % texts.length;
+    speed = 200;
+  }
+
+  setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+
+const aboutAnimation = document.querySelectorAll(".about-container");
+
+const observer = new IntersectionObserver((entries) =>{
+  entries.forEach(entry => { 
+    if(entry .isIntersecting){
+      entry.target.classList.add("active");
+    } else{
+      entry.target.classList.remove("active");
+    }
+
+  });
+}, {threshold: 0.3});
+
+
+aboutAnimation.forEach(section => observer.observe(section));
+
+
 const sectionSobre = document.querySelector("#sobre");
 
-const observer = new IntersectionObserver(entries => {
+const observer2 = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const skills = sectionSobre.querySelectorAll(".skill");
@@ -10,11 +60,9 @@ const observer = new IntersectionObserver(entries => {
         const progress = skill.querySelector(".progress");
         const value = skill.querySelector(".progress-value");
 
-        // ativa a barra
         progress.style.setProperty("--scale", percent);
         skill.classList.add("active");
 
-        // animação de contagem usando requestAnimationFrame
         const target = parseInt(skill.dataset.percent);
         let start = null;
 
@@ -22,8 +70,7 @@ const observer = new IntersectionObserver(entries => {
           if (!start) start = timestamp;
           const elapsed = timestamp - start;
 
-          // define duração da animação em ms
-          const duration = 2000; // 2 segundos
+          const duration = 2000;
           const progressPercent = Math.min((elapsed / duration) * target, target);
 
           value.textContent = Math.round(progressPercent) + "%";
@@ -36,9 +83,19 @@ const observer = new IntersectionObserver(entries => {
         requestAnimationFrame(animate);
       });
 
-      observer.unobserve(sectionSobre);
+    } else {
+     
+      const skills = sectionSobre.querySelectorAll(".skill");
+      skills.forEach(skill => {
+        const progress = skill.querySelector(".progress");
+        const value = skill.querySelector(".progress-value");
+
+        progress.style.setProperty("--scale", 0);
+        skill.classList.remove("active");
+        value.textContent = "0%"; 
+      });
     }
   });
 }, { threshold: 0.5 });
 
-observer.observe(sectionSobre);
+observer2.observe(sectionSobre);
