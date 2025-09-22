@@ -172,62 +172,20 @@ margin: 0;
   overflow: hidden;
   margin: 20px;
 }
-.progress-js {
+.progress {
   position: absolute;
   left: 0;
   background-color: rgb(130, 6, 255);
-  width: 10%; 
+  width: 100%; 
   height: 100%;
   border-radius: 15px;
   transform: scaleX(0);
   transform-origin: left; 
-  animation: progressScale 3s forwards;
+  transition: transform 2s ease;
 }
-.progress-sql {
-  position: absolute;
-  left: 0;
-  background-color: rgb(130, 6, 255);
-  width: 60%; 
-  height: 100%;
-  border-radius: 15px;
-  transform: scaleX(0);
-  transform-origin: left; 
-  animation: progressScale 3s forwards;
+.skill.active .progress {
+  transform: scaleX(var(--scale,1));
 }
-.progress-html {
-  position: absolute;
-  left: 0;
-  background-color: rgb(130, 6, 255);
-  width: 40%; 
-  height: 100%;
-  border-radius: 15px;
-  transform: scaleX(0);
-  transform-origin: left; 
-  animation: progressScale 3s forwards;
-}
-.progress-java {
-  position: absolute;
-  left: 0;
-  background-color: rgb(130, 6, 255);
-  width: 70%; 
-  height: 100%;
-  border-radius: 15px;
-  transform: scaleX(0);
-  transform-origin: left; 
-  animation: progressScale 3s forwards;
-}
-.progress-css {
-  position: absolute;
-  left: 0;
-  background-color: rgb(130, 6, 255);
-  width: 50%; 
-  height: 100%;
-  border-radius: 15px;
-  transform: scaleX(0);
-  transform-origin: left; 
-  animation: progressScale 3s forwards;
-}
-
 
 
 

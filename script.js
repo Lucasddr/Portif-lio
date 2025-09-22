@@ -1,20 +1,44 @@
-const progress = document.querySelector('.skill');
-const progressValue = document.querySelector('.progress-value');
-const targetPercent = 10; 
-const duration = 3000; 
-let start = null;
+const sectionSobre = document.querySelector("#sobre");
 
-function animate(timestamp) {
-  if (!start) start = timestamp;
-  const elapsed = timestamp - start;
-  const progressPercent = Math.min((elapsed / duration) * targetPercent, targetPercent);
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const skills = sectionSobre.querySelectorAll(".skill");
 
-  progress.style.width = progressPercent + '%';
-  progressValue.textContent = Math.floor(progressPercent) + '%';
+      skills.forEach(skill => {
+        const percent = skill.dataset.percent / 100;
+        const progress = skill.querySelector(".progress");
+        const value = skill.querySelector(".progress-value");
 
-  if (elapsed < duration) {
-    requestAnimationFrame(animate);
-  }
-}
+        // ativa a barra
+        progress.style.setProperty("--scale", percent);
+        skill.classList.add("active");
 
-requestAnimationFrame(animate);
+        // animação de contagem usando requestAnimationFrame
+        const target = parseInt(skill.dataset.percent);
+        let start = null;
+
+        function animate(timestamp) {
+          if (!start) start = timestamp;
+          const elapsed = timestamp - start;
+
+          // define duração da animação em ms
+          const duration = 2000; // 2 segundos
+          const progressPercent = Math.min((elapsed / duration) * target, target);
+
+          value.textContent = Math.round(progressPercent) + "%";
+
+          if (progressPercent < target) {
+            requestAnimationFrame(animate);
+          }
+        }
+
+        requestAnimationFrame(animate);
+      });
+
+      observer.unobserve(sectionSobre);
+    }
+  });
+}, { threshold: 0.5 });
+
+observer.observe(sectionSobre);
