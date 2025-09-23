@@ -4,7 +4,7 @@ const texts = ["Full Stack", "Frontend", "Backend"];
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let speed = 200;
+let speed = 100;
 
 function typeEffect() {
   const currentText = texts[textIndex];
@@ -48,7 +48,7 @@ const observer = new IntersectionObserver((entries) =>{
 aboutAnimation.forEach(section => observer.observe(section));
 
 
-const sectionSobre = document.querySelector("#sobre");
+const sectionSobre = document.querySelector("#about");
 
 const observer2 = new IntersectionObserver(entries => {
   entries.forEach(entry => {
