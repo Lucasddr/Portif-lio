@@ -1,3 +1,18 @@
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+const observer3 = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => link.classList.remove("active"));
+      const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+      activeLink.classList.add("active");
+    }
+  });
+}, { threshold: 0.6 });
+
+sections.forEach(section => observer3.observe(section));
+
 const textElement = document.querySelector(".typing-text");
 const texts = ["Full Stack", "Frontend", "Backend"];
 
@@ -42,7 +57,7 @@ const observer = new IntersectionObserver((entries) =>{
     }
 
   });
-}, {threshold: 0.3});
+}, {threshold: 0.5});
 
 
 aboutAnimation.forEach(section => observer.observe(section));
@@ -99,3 +114,7 @@ const observer2 = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 
 observer2.observe(sectionSobre);
+
+const navLink = document.querySelector(".nav-link");
+
+

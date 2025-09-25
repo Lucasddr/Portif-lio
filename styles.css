@@ -6,19 +6,28 @@
   padding: 0;
   margin: 0;
 }
+
 html{
   scroll-behavior: smooth;
 }
+
 a{
   color: #fff;
   text-decoration: none;
 }
+
 body{
   margin: 0;
   padding: 0;
   justify-content: center;
   align-items: center;
 }
+
+h1{
+  font-family: "Exo 2", sans-serif;
+  color: #fff;
+}
+
 .navbar{
   font-family: "Exo 2", sans-serif;
   width: 100%;
@@ -31,6 +40,42 @@ body{
   gap: 20px;
   z-index: 10000;
 }
+
+.nav-link{
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: rgb(113, 64, 163);
+}
+
+.nav-link.active{
+  color: rgb(113, 64, 163);
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;   
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #7a3df0;
+  transform: scaleX(0);        
+  transform-origin: right;     
+  transition: transform 0.3s ease;
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);        
+}
+
 .hero{
   background-size: cover;
   background-position: center;
@@ -40,19 +85,23 @@ body{
   align-items: center;
   justify-content: center;
 }
+
 .hero-content{
   color: #fff;
 }
+
 .introducao{
   font-size: 20px;
   font-family: "Exo 2", sans-serif;
   margin: 0;
 }
+
 .title{
 font-family: "Exo 2", sans-serif;
 font-size: 50px;
 margin: 0;
 }
+
 .typing-container {
   font-family: "Oswald", sans-serif;
   font-size: 60px;
@@ -60,6 +109,7 @@ margin: 0;
   display: inline-flex;
   align-items: center;
 }
+
 .cursor {
   display: inline-block;
   width: 2px;
@@ -77,15 +127,16 @@ margin: 0;
 
 .arrow{
   position: fixed; 
-    bottom: 20px;  
-    left: 50%;     
-    transform: translateX(-50%);
-    font-size: 2rem; 
-    color: #fff;
-    cursor: pointer;
-    z-index: 1000;  
-    animation: bounce 2s infinite;
+  bottom: 20px;  
+  left: 50%;     
+  transform: translateX(-50%);
+  font-size: 2rem; 
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;  
+  animation: bounce 2s infinite;
 }
+
 .about{
  background: linear-gradient(
     rgba(0, 0, 0, 0.7),
@@ -102,11 +153,13 @@ margin: 0;
   align-items: center;
   justify-content: center;
 }
+
 .about h1{
   color: rgb(130, 6, 255);
   font-family: "Oswald", sans-serif;
   margin-bottom: 15px;
 }
+
 .about-container{
   margin: 40px;
   display: flex;
@@ -120,6 +173,7 @@ margin: 0;
   min-width: 90%;
   min-height: 500px;
 }
+
 .about-container{
   opacity: 0;
   transform: translateY(50px);
@@ -130,10 +184,12 @@ margin: 0;
   opacity: 1;
   transform: translateY(0);
 }
+
 .about-container p{
   justify-content: center;
   text-align: justify;
 }
+
 .presentation{
   border-radius: 15px;
   margin: 40px;
@@ -142,6 +198,7 @@ margin: 0;
   text-align: justify;
   flex: 2;
 }
+
 .competences{
   justify-content: center;
   margin: 40px;
@@ -150,6 +207,7 @@ margin: 0;
   text-align: center;
   flex: 1;
 }
+
 .skills{
   margin-top: 20px;
   display: flex;
@@ -158,6 +216,7 @@ margin: 0;
   min-width: 100%;
   min-height: 100%;
 }
+
 .skill{
   position: relative;
   display: flex;
@@ -167,22 +226,26 @@ margin: 0;
   border-radius: 15px;
   background-color: rgba(34, 15, 41, 0.5);
   padding: 20px;
-  min-width: 100%;
+  min-width: 70%;
   min-height: 25%;
 }
+
 .skill i{
   margin-right: 8px;
   font-size: 20px;
 }
+
 .skill p{
   margin-right: 20px;
 }
+
 .skill h5{
   position: absolute;
   right: 20px;
   bottom: 10px;
   color: #fff;
 }
+
 .progress-bar{
   position: absolute;
   right: 0;
@@ -194,6 +257,7 @@ margin: 0;
   overflow: hidden;
   margin: 20px;
 }
+
 .progress {
   position: absolute;
   left: 0;
@@ -205,54 +269,62 @@ margin: 0;
   transform-origin: left; 
   transition: transform 3s;
 }
+
 .skill.active .progress {
   transform: scaleX(var(--scale,1));
 }
+
 .projects{
+  box-sizing: border-box;
   background-size: cover;
   background-position: center;
   background-color: rgb(33, 0, 36);
-  display: flex;
   min-height: 100vh;
-  align-items: top;
-  justify-content: center;
+  padding-top: 40px;
 }
-.projects-container{
-  position: relative;
+
+.projects-title{
+  height: 100px;
+  justify-content: center;
   text-align: center;
-  display: flex;
-  min-width: 80%;
-  flex-direction: column;
   color: #fff;
   font-family: "Exo 2", sans-serif;
   font-size: 20px;
+  padding: 20px;
+}
+
+.projects-container{
+  min-height: 60%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
   padding: 40px;
-  margin: 40px;
+  gap: 60px;
 }
-.GP-Bank {
-  margin: 80px;
-  min-width: 30%;
-  max-width: 250px;
-  flex: 1;
+
+.project {
+  display: flex;
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 40px;
+  height: 200px;
+  width: 300px;
   background-color: rgba(152, 151, 151, 0.3);
   border: 2px solid rgba(0, 0, 0, 0.7);
   border-radius: 15px;
+  text-align: center;
 }
-.Alimentos{
-  margin: 80px;
-  min-width: 30%;
-  max-width: 250px;
-  flex: 2;
-  background-color: rgba(152, 151, 151, 0.3);
-  border: 2px solid rgba(0, 0, 0, 0.7);
-  border-radius: 15px;
+
+.project h4 {
+  font-family: "Exo 2", sans-serif;
+  color: #fff;
 }
-.Madeireira{
-  margin: 80px;
-  min-width: 30%;
-  max-width: 250px;
-  flex: 3;
-  background-color: rgba(152, 151, 151, 0.3);
-  border: 2px solid rgba(0, 0, 0, 0.7);
-  border-radius: 15px;
+
+.contact {
+  height: 100vh;
+  background-color: rgb(33, 0, 36);
+  background-position: center;
+  background-repeat: no-repeat;
 }
