@@ -9,7 +9,7 @@ const observer3 = new IntersectionObserver((entries) => {
       activeLink.classList.add("active");
     }
   });
-}, { threshold: 0.6 });
+}, { threshold: 0.4 });
 
 sections.forEach(section => observer3.observe(section));
 
@@ -57,13 +57,13 @@ const observer = new IntersectionObserver((entries) =>{
     }
 
   });
-}, {threshold: 0.5});
+}, {threshold: 0.4});
 
 
 aboutAnimation.forEach(section => observer.observe(section));
 
 
-const sectionSobre = document.querySelector("#about");
+const sectionSobre = document.querySelector("#about-section");
 
 const observer2 = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -111,10 +111,10 @@ const observer2 = new IntersectionObserver(entries => {
       });
     }
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.35
+ });
 
 observer2.observe(sectionSobre);
 
 const navLink = document.querySelector(".nav-link");
-
 
