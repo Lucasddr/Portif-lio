@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="script.js" defer></script>
 
     <title>Portfolio</title>
 </head>
 
 <body>
     <nav class="navbar">
-        <a href="#hero-section" class="nav-link">Inicio</a>
+        <a href="#hero-section" class="nav-link">Home</a>
         <a href="#about-section" class="nav-link">Sobre</a>
-        <a href="#certificates" class="nav-link">Certificados</a>
+        <a href="#competences-section" class="nav-link">Stack</a>
+        <a href="#certificates" class="nav-link">Certs</a>
         <a href="#projects-section" class="nav-link">Projetos</a>
-        <a href="#contact" class="nav-link">Contato</a>
+        <a href="#contact-section" class="nav-link">Contato</a>
     </nav>
     <section class="section" id="hero-section">
         <div class="hero-content">
@@ -40,98 +40,128 @@
 
     <section class="section" id="about-section">
         <div class="about-container">
+            <div class="about-layout">
+                <div class="about-text">
+                    <h2 class="sub-title">Sobre mim</h2>
 
-            <div class="presentation">
-                <h1>Sobre mim</h1>
-                <p>Desenvolvo soluções digitais completas e responsivas,
-                    abrangendo landing pages, sites institucionais, sistemas
-                    internos, dashboards e aplicações web personalizadas.
-                </p>
-                <p>
-                    Tenho experiência em desenvolvimento front-end e back-end,
-                    aplicando HTML, CSS, JavaScript, Java, MySql, frameworks modernos e boas
-                    práticas de programação para garantir usabilidade, performance
-                    e escalabilidade.
-                </p>
-                <p>
-                    Meus projetos são planejados para atender às
-                    necessidades reais de empresas e usuários, priorizando design
-                    responsivo, acessibilidade, integração com bancos de dados e
-                    otimização para dispositivos móveis.
-                </p>
-                <p>
-                    Busco sempre aplicar
-                    metodologias ágeis, controle de versionamento e testes contínuos,
-                    garantindo soluções digitais eficientes, confiáveis e de fácil manutenção.
-                </p>
-            </div>
-            <div class="competences">
-                <h1>Competências</h1>
-                <div class="skills">
+                    <p>Desenvolvo soluções digitais completas e responsivas, abrangendo landing pages, sites
+                        institucionais, sistemas internos, dashboards e aplicações web personalizadas.</p>
 
-                    <div class="skill" data-percent="30">
-                        <i class="fa-brands fa-js"></i>
-                        <p> JavaScript </p>
-                        <h5><span class="progress-value">0%</span></h5>
-                        <div class="progress-bar">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
+                    <p>Atuo tanto no front-end quanto no back-end, utilizando HTML, CSS, JavaScript, Java e MySQL,
+                        sempre aplicando boas práticas para garantir usabilidade, performance e escalabilidade.</p>
 
-                    <div class="skill" data-percent="60">
-                        <i class="fa-solid fa-database"></i>
-                        <p> MySql </p>
-                        <h5><span class="progress-value">0%</span></h5>
-                        <div class="progress-bar">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
+                    <p>Priorizo design responsivo, acessibilidade, integração com bancos de dados e otimização para
+                        dispositivos móveis.</p>
 
-                    <div class="skill" data-percent="70">
-                        <i class="fa-brands fa-html5"></i>
-                        <p> HTML </p>
-                        <h5><span class="progress-value">0%</span></h5>
-                        <div class="progress-bar">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
+                    <p>Utilizo metodologias ágeis, versionamento e testes contínuos, garantindo soluções eficientes e de
+                        fácil manutenção.</p>
+                </div>
 
-                    <div class="skill" data-percent="75">
-                        <i class="fa-brands fa-java"></i>
-                        <p> Java </p>
-                        <h5><span class="progress-value">0%</span></h5>
-                        <div class="progress-bar">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill" data-percent="70">
-                        <i class="fa-brands fa-css3-alt"></i>
-                        <p>CSS </p>
-                        <h5><span class="progress-value">0%</span></h5>
-                        <div class="progress-bar">
-                            <div class="progress"></div>
-                        </div>
-                    </div>
+                <div class="about-image">
+                    <img src="imagens/ImgSobre.png" alt="Ambiente de trabalho e desenvolvimento">
+                    <a href="https://wa.me/48999483625?text=Olá%2C%20vim%20pelo%20seu%20portfólio%20"
+                        class="wpp-btn"><span class="icon-wpp"><i
+                                class="fa-brands fa-whatsapp"></i></span></i><strong>Vamos Conversar</strong></a>
                 </div>
             </div>
         </div>
     </section>
-       <section class="section" id="certificates">
+    <section class="section" id="competences-section">
+        <div class="stack-container">
+            <div class="grid-2">
+                <div class="text">
+                    <h2 class="sub-title">Competências</h2>
+                    <p>Trabalho com tecnologias voltadas ao desenvolvimento de interfaces e sistemas,
+                        priorizando organização, clareza visual e manutenção do código.
+                    </p>
+                    <p>
+                        Busco soluções simples,
+                        bem estruturadas e consistentes, aplicando boas práticas tanto no front-end quanto na lógica de
+                        negócio.
+                    </p>
+                    <p>
+                        Aqui estão as principais tecnologias que utilizo no meu dia a dia.
+                    </p>
+                </div>
+                <div class="grid-4">
+                    <div class="card-stack">
+                        <div class="icon">
+                            <i class="fa-brands fa-css3-alt"></i>
+                        </div>
+                        <h4>CSS</h4>
+                    </div>
+
+                    <div class="card-stack">
+                        <div class="icon">
+                            <i class="fa-brands fa-html5"></i>
+                        </div>
+                        <h4>HTML</h4>
+                    </div>
+
+                    <div class="card-stack">
+                        <div class="icon">
+                            <i class="fa-brands fa-js"></i>
+                        </div>
+                        <h4>JavaScript</h4>
+                    </div>
+
+                    <div class="card-stack">
+                        <div class="icon">
+                            <i class="fa-brands fa-java"></i>
+                        </div>
+                        <h4>Java</h4>
+                    </div>
+
+                    <div class="card-stack">
+                        <div class="icon">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h4>MySQL</h4>
+                    </div>
+
+                    <div class="card-stack">
+                        <div class="icon">
+                            <i class="fa-brands fa-git-alt"></i>
+                        </div>
+                        <h4>Git</h4>
+                    </div>
+
+                    <div class="card-stack">
+                        <div class="icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <h4>GitHub</h4>
+                    </div>
+
+                    <div class="card-stack">
+                        <div class="icon">
+                            <i class="fa-solid fa-plug"></i>
+                        </div>
+                        <h4>APIs REST</h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="certificates">
         <div class="section-container">
             <div class="certificates-card">
-                <div class="certificate-img-wrapper">
-                    <img class="certificates-img" src="imagens/CertAmbCompConec.png" alt="Certificado Ambientes Computacionais e Conectividade - UNISUL">
-                </div> 
+                <div class="img-wrapper">
+                    <img class="certificates-img" src="imagens/CertAmbCompConec.png"
+                        alt="Certificado Ambientes Computacionais e Conectividade - UNISUL">
+                </div>
                 <div class="card-overlay">
                     <h3>Ambientes Computacionais e Conenctividade</h3>
                     <p></p>
-                    <a href="certificados/Certificado Ambientes Computacionais e Conectividade.pdf" target="_blank">Ver Certificado</a>
+                    <a href="certificados/Certificado Ambientes Computacionais e Conectividade.pdf" target="_blank">Ver
+                        Certificado</a>
                 </div>
             </div>
-             <div class="certificates-card">
-                <div class="certificate-img-wrapper">
-                     <img class="certificates-img" src="imagens/CertModSoft.png" alt="Certificado de Modelagem de Software - UNISUL">
+            <div class="certificates-card">
+                <div class="img-wrapper">
+                    <img class="certificates-img" src="imagens/CertModSoft.png"
+                        alt="Certificado de Modelagem de Software - UNISUL">
                 </div>
                 <div class="card-overlay">
                     <h3>Modelagem de Software</h3>
@@ -139,41 +169,34 @@
                     <a href="certificados/Certificado Modelagem de Software.pdf" target="_blank">Ver Certificado</a>
                 </div>
             </div>
-             <div class="certificates-card">
-                <div class="certificate-img-wrapper">
-                    <img class="certificates-img" src="imagens/CertProgComp.png" alt="Certificado Programção de Soluções Computacionais - UNISUL">
+            <div class="certificates-card">
+                <div class="img-wrapper">
+                    <img class="certificates-img" src="imagens/CertProgComp.png"
+                        alt="Certificado Programção de Soluções Computacionais - UNISUL">
                 </div>
                 <div class="card-overlay">
                     <h3>Programação de Soluções Computacionais</h3>
                     <p></p>
-                    <a href="certificados/Certificado Programção de Soluções Computacionais.pdf" target="_blank">Ver Certificado</a>
+                    <a href="certificados/Certificado Programção de Soluções Computacionais.pdf" target="_blank">Ver
+                        Certificado</a>
                 </div>
             </div>
-             <div class="certificates-card">
-                <div class="certificate-img-wrapper">
-                    <img class="certificates-img" src="imagens/CertSisCompSeg.png" alt="Certificado Sistemas Computacionais e Segurança - UNISUL">
+            <div class="certificates-card">
+                <div class="img-wrapper">
+                    <img class="certificates-img" src="imagens/CertSisCompSeg.png"
+                        alt="Certificado Sistemas Computacionais e Segurança - UNISUL">
                 </div>
                 <div class="card-overlay">
                     <h3>Sistemas Computacionais e Segurança</h3>
                     <p></p>
-                    <a href="certificados/Certificado Sistemas Computacionais e Segurança.pdf" target="_blank">Ver Certificado</a>
+                    <a href="certificados/Certificado Sistemas Computacionais e Segurança.pdf" target="_blank">Ver
+                        Certificado</a>
                 </div>
             </div>
         </div>
     </section>
     <section class="section" id="projects-section">
-        <div class="projects-container">
 
-            <div class="project">
-
-            </div>
-            <div class="project">
-                <h4></h4>
-            </div>
-            <div class="project">
-
-            </div>
-        </div>
     </section>
     <section class="section" id="contact-section">
         <div class="contact-container">
@@ -183,6 +206,7 @@
 
         </div>
     </section>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
