@@ -12,15 +12,22 @@
     --fs-title: clamp(1.8rem, 5vw, 3rem);
     --fs-subtitle: clamp(1.2rem, 3.5vw, 1.8rem);
     --fs-text: clamp(1rem, 2.5vw, 1.1rem);
-    --fs-cta: clamp(.8rem, 2vw, 1rem)
+    --fs-cta: clamp(.8rem, 2vw, 1rem);
 
-    --font-accent: 'Bitcount Grid Double', monospace;
     --nav-color: rgb(30, 1, 59);
     --active-and-text-color: rgb(113, 64, 163);
     --background-color: rgb(33, 0, 36);
     --border-color: rgba(152, 151, 151, 0.3);
     --wpp-btn-color: rgb(37, 211, 102);
     --wpp-btn-hover-color: rgb(28, 160, 77);
+    --html-color: rgba(227, 79, 38, 0.7);
+    --css-color: rgba(38, 77, 228, 0.7);
+    --js-color: rgba(240, 219, 79, 0.7);
+    --java-color: rgba(83, 130, 161, 0.7);
+    --mysql-color: rgba(0, 117, 143, 0.7);
+    --git-color: rgba(240, 80, 50, 0.7);
+    --github-color: rgba(110, 118, 129, 0.7);
+    --api-color: rgba(139, 92, 246, 0.7);
 
 }
 
@@ -63,6 +70,101 @@ a{
 
 .icon-wpp{
   font-size: 1.5rem;
+}
+
+/* Classes de animações */
+
+.anim {
+    transition: ease 0.3s;
+}
+
+.anim-up:hover{
+  transform: translateY(-6px);
+  color: var(--active-and-text-color);
+}
+
+.anim-scale:hover{
+  transform: scale(1.06);
+}
+
+.anim-shadow:hover{
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.7);
+}
+
+.anim-glow:hover {
+  box-shadow: 0 0 20px rgba(120,80,255,0.7);
+}
+
+.glow-html:hover {
+  box-shadow: 0 0 20px var(--html-color);
+  color: var(--html-color);
+}
+
+.glow-css:hover {
+  box-shadow: 0 0 20px var(--css-color);
+  color: var(--css-color);
+}
+
+.glow-js:hover {
+  box-shadow: 0 0 20px var(--js-color);
+  color: var(--js-color);
+}
+
+.glow-java:hover {
+  box-shadow: 0 0 20px var(--java-color);
+  color: var(--java-color);
+}
+
+.glow-mysql:hover{
+  box-shadow: 0 0 20px var(--mysql-color);
+  color: var(--mysql-color);
+}
+
+.glow-git:hover{
+  box-shadow: 0 0 20px var(--git-color);
+  color: var(--git-color);
+}
+
+.glow-github:hover{
+  box-shadow: 0 0 20px var(--github-color);
+  color: var(--github-color);
+}
+
+.glow-api:hover{
+  box-shadow: 0 0 20px var(--api-color);
+  color: var(--api-color);
+}
+
+.link-anim{
+  width: fit-content;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+.link-anim::after{
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: 
+    color ease 0.45s,
+    transform ease 0.6s;
+}
+
+.link-anim:hover{
+  color: var(--nav-color);
+}
+
+.link-anim:hover::after{
+  /*color: var(--active-and-text-color);*/
+  transform-origin: center;
+  transform: scaleX(1);
 }
 
 /* Início do css da navbar */
@@ -505,6 +607,8 @@ margin: 0;
 .card-text{
   display: flex;
   flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 .card-text h3 {
@@ -514,6 +618,7 @@ margin: 0;
 
 .card-text a{
   margin-top: auto;
+  padding-bottom: 4px;
 }
 
 @media(max-width: 900px){
@@ -697,6 +802,5 @@ margin: 0;
     transform: translateX(-27%);
   }
 }
-
 
 /* Termino do css da section de contato */
