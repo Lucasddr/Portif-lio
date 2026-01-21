@@ -235,6 +235,8 @@ a{
   min-height: 100vh;
   justify-content: center;
   overflow-x: hidden;
+  overflow-x: hidden;
+  overflow-y: clip;
 }
 
 .container{
@@ -648,6 +650,14 @@ margin: 0;
   }
 }
 
+@media (max-width: 600px){
+  .grid-4-certificates{
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    justify-items: center;
+  }
+}
+
 @media(max-width:480px){
   .grid-4-certificates{
     grid-template-columns: 1fr;
@@ -715,6 +725,15 @@ margin: 0;
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media(max-width: 600px){
+  #projects{
+    grid-template-columns: 1fr;
+    justify-items: center;
+    width: 100%;
+  }
+}
+
 
 @media(max-width:480px){
   #projects{
