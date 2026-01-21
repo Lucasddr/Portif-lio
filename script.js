@@ -1,27 +1,3 @@
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
-
-//Animação das nav-links
-
-const observer2 = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        navLinks.forEach((link) => link.classList.remove("active"));
-        const activeLink = document.querySelector(
-          `.nav-link[href="#${entry.target.id}"]`,
-        );
-        if (activeLink) {
-          activeLink.classList.add("active");
-        }
-      }
-    });
-  },
-  { threshold: 0.4 },
-);
-
-sections.forEach((section) => observer2.observe(section));
-
 //Animação typing da hero
 
 const textElement = document.querySelector(".typing-text");
@@ -57,22 +33,35 @@ function typeEffect() {
 
 typeEffect();
 
-//Animação da seção sobre
+//Animação da seção sobre e navlinks
 
-const aboutAnimation = document.querySelectorAll(".about-container");
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+const aboutAnimation = document.querySelectorAll(".container");
 
 const observer = new IntersectionObserver(
   (entries) => {
+
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-      } else {
-        entry.target.classList.remove("active");
-      }
+      if (entry.isIntersecting) entry.target.classList.add("active");
     });
+
+    const visibleSections = entries
+      .filter((e) => e.isIntersecting && e.target.tagName === "SECTION" && e.target.id);
+
+    if (visibleSections.length === 0) return;
+
+    const topSection = visibleSections.sort(
+      (a, b) => b.intersectionRatio - a.intersectionRatio
+    )[0].target;
+
+    navLinks.forEach((link) => link.classList.remove("active"));
+
+    const activeLink = document.querySelector(`.nav-link[href="#${topSection.id}"]`);
+    activeLink?.classList.add("active");
   },
-  { threshold: 0.35 },
+  { threshold: 0.35 }
 );
 
-aboutAnimation.forEach((section) => observer.observe(section));
-
+sections.forEach((s) => observer.observe(s));
+aboutAnimation.forEach((c) => observer.observe(c));

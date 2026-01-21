@@ -243,6 +243,14 @@ a{
   flex-direction: column;
   padding-inline: 2rem;
   max-width: 1200px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.3s ease-out;
+}
+
+.container.active{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Classes globais */
