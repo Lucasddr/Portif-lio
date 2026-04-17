@@ -60,7 +60,7 @@ const observer = new IntersectionObserver(
     const activeLink = document.querySelector(`.nav-link[href="#${topSection.id}"]`);
     activeLink?.classList.add("active");
   },
-  { threshold: 0.35 }
+  { threshold: 0.1 }
 );
 
 sections.forEach((s) => observer.observe(s));

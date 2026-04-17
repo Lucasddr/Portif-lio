@@ -223,6 +223,12 @@ a{
   transform: scaleX(1);        
 }
 
+@media (max-width: 475px){
+  .navbar{
+    display: none;
+  }
+}
+
 /* Termino do css da navbar */
 
 .section{
@@ -699,6 +705,7 @@ margin: 0;
 #projects-container{
   flex-direction: column;
   text-align: center;
+  justify-content: center;
   gap: 2rem;
   padding-top: 0;
 }
@@ -736,8 +743,10 @@ margin: 0;
   transform: translateX(50%);
 }
 
-@media(max-width:768px){
+@media(max-width:812px){
   #projects{
+    width: 100%;
+    justify-items: center;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -851,6 +860,10 @@ margin: 0;
   #contact-img{
     width: 200%;
     transform: translateX(-27%);
+  }
+
+  #contact-section{
+    height: 120vh;
   }
 }
 
